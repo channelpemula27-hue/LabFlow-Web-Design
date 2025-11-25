@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { CheckCircle2, ShieldCheck, FileText, Target, Settings2 } from 'lucide-react';
@@ -59,7 +60,7 @@ const Expertise: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section id="expertise" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
@@ -106,7 +107,10 @@ const Expertise: React.FC = () => {
               {/* Latar Belakang Abstrak */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-labblue-100/50 to-purple-100/50 rounded-full blur-3xl opacity-70 animate-pulse"></div>
               
-              <div className="grid grid-cols-2 gap-6 relative z-10 w-full max-w-md">
+              {/* Dashed Border Container */}
+              <div className="absolute top-0 left-0 right-0 bottom-0 border-2 border-dashed border-labblue-200 rounded-3xl pointer-events-none"></div>
+
+              <div className="grid grid-cols-2 gap-6 relative z-10 w-full max-w-md p-6">
                  {valuesData.map((item, index) => {
                    const Icon = item.icon;
                    // Menentukan kelas warna secara dinamis
@@ -115,7 +119,7 @@ const Expertise: React.FC = () => {
                    const iconColorClass = `text-${item.color}-600`;
                    const borderColorClass = `border-${item.color}-100`;
                    // Menambahkan margin top pada kartu di kolom kedua untuk efek "staggered"
-                   const marginTopClass = index % 2 !== 0 ? "mt-8" : "";
+                   const marginTopClass = index % 2 !== 0 ? "mt-12" : "";
 
                    return (
                      <motion.div
